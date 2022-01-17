@@ -7,6 +7,9 @@ const actionCreator = actionCreatorFactory();
 const profileActions = {
   setProfile: actionCreator<Partial<Profile>>('SET_PROFILE'),
   setAddress: actionCreator<Partial<Address>>('SET_ADDRESS'),
+  searchAddress: actionCreator.async<{}, Partial<Address>, {}>(
+    'SEARCH_ADDRESS'
+  ),
 };
 
 export default profileActions;
