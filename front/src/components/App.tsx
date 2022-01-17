@@ -1,7 +1,13 @@
-import React from "react";
+import React from 'react';
 
-function App() {
-  return <div>hello</div>;
-}
+import Profile from './Profile';
+
+const App: React.FC = () => {
+  return (
+    <>
+      <Profile />
+    </>
+  );
+};
 
 export default App;
