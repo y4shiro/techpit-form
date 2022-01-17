@@ -4,8 +4,8 @@ import { TextField } from '@material-ui/core';
 
 import useStyles from './styles';
 import { RootState } from '../domain/entity/rootState';
-
 import { Profile } from '../domain/entity/profile';
+import { PROFILE } from '../domain/services/profile';
 import profileActions from '../store/profile/actions';
 
 const Basic: React.FC = () => {
@@ -22,7 +22,7 @@ const Basic: React.FC = () => {
       <TextField
         fullWidth
         className={classes.formField}
-        label="名前"
+        label={PROFILE.NAME}
         value={profile.name}
         onChange={(e) => handleChange({ name: e.target.value })}
       />
@@ -31,7 +31,7 @@ const Basic: React.FC = () => {
         multiline
         className={classes.formField}
         rows={5}
-        label="自己紹介"
+        label={PROFILE.DESCRIPTION}
         value={profile.description}
         onChange={(e) => handleChange({ description: e.target.value })}
       />
