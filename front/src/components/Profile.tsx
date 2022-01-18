@@ -3,6 +3,7 @@ import { Container, Typography } from '@material-ui/core';
 
 import Basic from './Basic';
 import Address from './Address';
+import Career from './Career';
 
 import useStyles from './styles';
 
@@ -29,6 +30,13 @@ const Profile: React.FC = () => {
         住所
       </Typography>
       <Address />
+      <Typography
+        variant="h4"
+        component="h2"
+        className={classes.title}
+        color="primary"
+      ></Typography>
+      <Career />
     </Container>
   );
 };
