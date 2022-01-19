@@ -4,6 +4,7 @@ import { Container, Typography } from '@material-ui/core';
 import Basic from './Basic';
 import Address from './Address';
 import Career from './Career';
+import College from './College';
 
 import useStyles from './styles';
 
@@ -21,6 +22,7 @@ const Profile: React.FC = () => {
         基本情報
       </Typography>
       <Basic />
+
       <Typography
         variant="h4"
         component="h2"
@@ -30,12 +32,25 @@ const Profile: React.FC = () => {
         住所
       </Typography>
       <Address />
+
       <Typography
         variant="h4"
         component="h2"
         className={classes.title}
         color="primary"
-      ></Typography>
+      >
+        学歴
+      </Typography>
+      <College />
+
+      <Typography
+        variant="h4"
+        component="h2"
+        className={classes.title}
+        color="primary"
+      >
+        職歴
+      </Typography>
       <Career />
     </Container>
   );
