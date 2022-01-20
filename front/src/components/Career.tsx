@@ -20,6 +20,7 @@ const Career: React.FC = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const careers = useSelector((state: RootState) => state.profile.careers);
+  const validation = useSelector((state: RootState) => state.validation);
   const isAbleToAddCareer = exitEmptyCareers(careers);
 
   const handleChange = (member: Partial<ICareer>, i: number) => {
@@ -44,6 +45,8 @@ const Career: React.FC = () => {
           <TextField
             className={classes.formField}
             fullWidth
+            error={!!validation.message.careers[i]?.company}
+            helperText={validation.message.careers[i]?.company}
             label={PROFILE.CAREERS.COMPANY}
             value={c.company}
             onChange={(e) => handleChange({ company: e.target.value }, i)}
@@ -51,6 +54,8 @@ const Career: React.FC = () => {
           <TextField
             className={classes.formField}
             fullWidth
+            error={!!validation.message.careers[i]?.position}
+            helperText={validation.message.careers[i]?.position}
             label={PROFILE.CAREERS.POSITION}
             value={c.position}
             onChange={(e) => handleChange({ position: e.target.value }, i)}
@@ -67,6 +72,8 @@ const Career: React.FC = () => {
                 <TextField
                   fullWidth
                   type="month"
+                  error={!!validation.message.careers[i]?.startAt}
+                  helperText={validation.message.careers[i]?.startAt}
                   InputLabelProps={{
                     shrink: true,
                   }}
@@ -81,6 +88,8 @@ const Career: React.FC = () => {
                 <TextField
                   fullWidth
                   type="month"
+                  error={!!validation.message.careers[i]?.endAt}
+                  helperText={validation.message.careers[i]?.endAt}
                   InputLabelProps={{
                     shrink: true,
                   }}
